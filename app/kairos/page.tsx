@@ -36,12 +36,17 @@ export default function KairosPage() {
           </p>
 
           <h1 className="max-w-xl text-5xl font-semibold tracking-tight md:text-7xl">
-            A casa digital da sua igreja.
+            Tudo o que sua igreja precisa, em um só app.
           </h1>
 
-          <p className="mt-6 text-lg leading-8 text-zinc-600">
-            Conecte fé, comunidade e propósito em um só lugar — com agenda,
-            cultos, pedidos de oração, conteúdo, doações e muito mais.
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-600">
+            Centralize agenda, cultos, pedidos de oração,
+            doações, conteúdos e comunicação da comunidade
+            em uma experiência simples, moderna e acolhedora.
+          </p>
+
+          <p className="mt-5 text-sm font-medium text-[#7d8fb3]">
+            A casa digital da sua igreja.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -56,33 +61,41 @@ export default function KairosPage() {
 
             <a
               href="#funcionalidades"
-              className="rounded-full border border-zinc-300 px-6 py-3 text-center text-sm font-semibold transition hover:bg-white"
+              className="rounded-full border border-zinc-300 bg-white px-6 py-3 text-center text-sm font-semibold transition hover:bg-zinc-50"
             >
               Conhecer o app
             </a>
           </div>
         </div>
 
-        <div className="rounded-[2rem] border border-white bg-white/70 p-6 shadow-xl shadow-blue-100/60">
+        <div className="rounded-[2rem] border border-zinc-200 bg-white p-6 shadow-sm">
           <div className="rounded-[1.5rem] bg-gradient-to-br from-[#dcecff] via-white to-[#eee7ff] p-6">
             <div className="rounded-[2rem] bg-white p-5 shadow-sm">
-              <p className="text-sm text-zinc-500">Hoje na igreja</p>
-              <h2 className="mt-2 text-2xl font-semibold">Culto de Celebração</h2>
+              <p className="text-sm text-zinc-500">
+                Hoje na igreja
+              </p>
+
+              <h2 className="mt-2 text-2xl font-semibold">
+                Culto de Celebração
+              </h2>
+
               <p className="mt-2 text-sm text-zinc-600">
                 Domingo, 18h • Transmissão ao vivo
               </p>
 
               <div className="mt-6 grid gap-3">
-                {["Agenda do mês", "Últimos cultos", "Pedido de oração"].map(
-                  (item) => (
-                    <div
-                      key={item}
-                      className="rounded-2xl border border-zinc-100 bg-zinc-50 p-4 text-sm font-medium"
-                    >
-                      {item}
-                    </div>
-                  )
-                )}
+                {[
+                  "Agenda do mês",
+                  "Últimos cultos",
+                  "Pedido de oração",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-zinc-100 bg-zinc-50 p-4 text-sm font-medium"
+                  >
+                    {item}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -189,7 +202,7 @@ export default function KairosPage() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-zinc-600">
-          Descubra como o Kairos pode fortalecer a conexão da sua comunidade.
+            Descubra como o Kairos pode fortalecer a conexão da sua comunidade.
           </p>
 
           <a
