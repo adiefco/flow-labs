@@ -3,23 +3,23 @@ import Link from "next/link";
 const services = [
   {
     number: "01",
-    title: "Apps",
-    description: "Aplicativos digitais pensados para uso real, clareza e evolução.",
+    title: "Sites e landing pages",
+    description: "Presença digital com clareza, velocidade e intenção.",
   },
   {
     number: "02",
-    title: "Plataformas",
-    description: "Sistemas e experiências sob medida para negócios e comunidades.",
+    title: "Aplicativos",
+    description: "Apps pensados para uso real, com foco em experiência e evolução.",
   },
   {
     number: "03",
-    title: "E-commerce",
-    description: "Lojas e interfaces digitais com foco em performance e conversão.",
+    title: "Plataformas e sistemas",
+    description: "Sistemas sob medida para negócios e comunidades que precisam escalar.",
   },
   {
     number: "04",
-    title: "Produtos próprios",
-    description: "Ideias internas transformadas em produtos digitais escaláveis.",
+    title: "E-commerce",
+    description: "Lojas e interfaces digitais com foco em performance e conversão.",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function Home() {
         </a>
       </header>
 
-      <section className="mx-auto max-w-7xl px-6 pb-24 pt-20 md:pb-32 md:pt-28">
+      <section className="mx-auto max-w-7xl px-6 pb-24 pt-10 md:pb-32 md:pt-16">
         <p className="mb-8 text-sm uppercase tracking-[0.35em] text-zinc-400">
           Estúdio de produtos digitais
         </p>
@@ -50,25 +50,25 @@ export default function Home() {
 
         <div className="mt-12 grid gap-10 border-t border-zinc-200 pt-10 md:grid-cols-[1fr_420px]">
           <p className="max-w-3xl text-xl leading-9 text-zinc-600">
-            A Flow Labs cria apps, plataformas, e-commerces e experiências
+            A Flow Labs cria sites, aplicativos, plataformas e experiências
             digitais para marcas, comunidades e ideias em movimento.
           </p>
 
           <div className="text-sm leading-7 text-zinc-500">
             <p>Design estratégico</p>
-            <p>Desenvolvimento front-end</p>
+            <p>Tecnologia sob medida</p>
             <p>Produtos digitais</p>
             <p>Experiências humanas</p>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col gap-3 sm:flex-row">
-          <Link
-            href="/kairos"
+          <a
+            href="#trabalhos"
             className="inline-flex w-fit rounded-full bg-zinc-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-zinc-700"
           >
-            Conhecer o Kairos
-          </Link>
+            Ver nossos trabalhos
+          </a>
 
           <a
             href="mailto:oi@flow-labs.digital"
@@ -116,28 +116,56 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24">
-        <div className="grid gap-10 border-t border-zinc-200 pt-14 md:grid-cols-[280px_1fr]">
+      <section id="trabalhos" className="mx-auto max-w-7xl px-6 py-24">
+        <div className="mb-14 border-t border-zinc-200 pt-14">
           <p className="text-sm uppercase tracking-[0.3em] text-zinc-400">
-            Produto em destaque
+            Trabalhos
           </p>
+        </div>
 
-          <div>
-            <h2 className="text-5xl font-semibold tracking-tight md:text-7xl">
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* Kairos */}
+          <Link
+            href="/kairos"
+            className="group flex flex-col rounded-3xl bg-[#f0f7ff] p-8 transition hover:bg-[#e4f0fc] md:p-10"
+          >
+            <p className="text-sm uppercase tracking-[0.3em] text-[#7d9fc2]">
+              Produto próprio
+            </p>
+
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
               Kairos
             </h2>
 
-            <p className="mt-6 max-w-2xl text-xl leading-9 text-zinc-600">
-              A casa digital da sua igreja. Um aplicativo moderno para
-              fortalecer comunidade, centralizar comunicação e aproximar pessoas.
+            <p className="mt-4 max-w-sm text-zinc-500">
+              A casa digital da sua igreja. Agenda, cultos, pedidos de oração e
+              comunicação em um só app.
             </p>
 
-            <Link
-              href="/kairos"
-              className="mt-8 inline-flex rounded-full bg-zinc-950 px-6 py-3 text-sm font-medium text-white transition hover:bg-zinc-700"
-            >
-              Conhecer produto
-            </Link>
+            <p className="mt-8 text-sm font-medium text-zinc-400 transition group-hover:text-zinc-700">
+              Conhecer produto →
+            </p>
+          </Link>
+
+          {/* Slot */}
+          <div className="flex flex-col rounded-3xl border border-dashed border-zinc-300 p-8 md:p-10">
+            <p className="text-sm uppercase tracking-[0.3em] text-zinc-300">
+              Em breve
+            </p>
+
+            <h2 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-200 md:text-5xl">
+              Próximo projeto
+            </h2>
+
+            <p className="mt-4 max-w-sm text-zinc-400">
+              Tem uma ideia que merece ganhar vida?{" "}
+              <a
+                href="mailto:oi@flow-labs.digital"
+                className="text-zinc-600 underline underline-offset-4 hover:text-zinc-950"
+              >
+                Fale com a gente.
+              </a>
+            </p>
           </div>
         </div>
       </section>

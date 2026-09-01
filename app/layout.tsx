@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -10,15 +11,16 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Estúdio de produtos digitais. Criamos experiências digitais com design, tecnologia e propósito.",
+    "Software house especializada em produtos digitais. Criamos sites, apps e plataformas com design, tecnologia e propósito.",
 
   keywords: [
+    "software house",
     "produtos digitais",
-    "apps",
+    "desenvolvimento de software",
+    "criação de sites",
+    "aplicativos",
+    "plataformas digitais",
     "e-commerce",
-    "desenvolvimento",
-    "react",
-    "nextjs",
     "flow labs",
   ],
 
@@ -34,24 +36,15 @@ export const metadata: Metadata = {
 
     title: "Flow Labs",
     description:
-      "Estúdio de produtos digitais. Criamos experiências digitais com design, tecnologia e propósito.",
+      "Software house especializada em produtos digitais. Criamos sites, apps e plataformas com design, tecnologia e propósito.",
 
-    images: [
-      {
-        url: "/og-flowlabs.png",
-        width: 1200,
-        height: 630,
-        alt: "Flow Labs",
-      },
-    ],
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Flow Labs",
     description:
-      "Estúdio de produtos digitais.",
-    images: ["/og-flowlabs.png"],
+      "Software house especializada em produtos digitais.",
   },
 
   icons: {
@@ -66,7 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body className={GeistSans.className}>{children}</body>
     </html>
   );
 }

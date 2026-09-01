@@ -11,23 +11,6 @@ const features = [
   ["🏛️", "Institucional", "Quem somos, equipe, projetos, valores e contato."],
 ];
 
-const testimonials = [
-  {
-    quote: "O Kairos transformou como nos comunicamos com a congregação. Tudo ficou mais simples.",
-    name: "Pr. Rafael Silva",
-    church: "Igreja Renovação, RJ",
-  },
-  {
-    quote: "Nossa comunidade aderiu muito rápido. A experiência é realmente acolhedora.",
-    name: "Rebeca Almeida",
-    church: "Comunidade Vida Nova, SP",
-  },
-  {
-    quote: "Reduziu o WhatsApp desordenado e centralizou tudo. Recomendo demais.",
-    name: "Diácono Carlos Melo",
-    church: "Igreja Restauração, MG",
-  },
-];
 
 export default function KairosPage() {
   return (
@@ -273,30 +256,34 @@ export default function KairosPage() {
         </div>
       </section>
 
-      {/* ── Depoimentos ── */}
+      {/* ── Early adopter ── */}
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <div className="text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-[#7d8fb3]">
-            Depoimentos
-          </p>
-          <h2 className="text-3xl font-semibold tracking-tight">
-            O que as igrejas dizem
-          </h2>
-        </div>
+        <div className="rounded-[2rem] border border-[#c8dff7] bg-[#f0f7ff] p-8 md:p-12">
+          <span className="mb-5 inline-block rounded-full bg-[#dcecff] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#4a7ab5]">
+            Early Access
+          </span>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {testimonials.map(({ quote, name, church }) => (
-            <div
-              key={name}
-              className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm"
-            >
-              <p className="text-sm leading-7 text-zinc-600">"{quote}"</p>
-              <div className="mt-5 border-t border-zinc-100 pt-4">
-                <p className="text-sm font-semibold">{name}</p>
-                <p className="text-xs text-zinc-400">{church}</p>
-              </div>
-            </div>
-          ))}
+          <h2 className="max-w-xl text-3xl font-semibold leading-tight tracking-tight md:text-4xl">
+            O Kairos está chegando. Seja uma das primeiras igrejas a usar.
+          </h2>
+
+          <p className="mt-4 max-w-lg text-zinc-500">
+            Estamos abrindo vagas para as primeiras igrejas. Quem entrar agora
+            ajuda a moldar o produto e tem condições especiais de lançamento.
+          </p>
+
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-zinc-900 px-7 py-3.5 text-sm font-semibold text-white shadow-md transition hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2"
+          >
+            Quero fazer parte →
+          </a>
+
+          <p className="mt-4 text-xs text-zinc-400">
+            Sem compromisso. Respondemos em até 24h.
+          </p>
         </div>
       </section>
 
