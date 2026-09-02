@@ -1,8 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-
-const gaMeasurementId =
-  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-RTPXYX29JL";
 
 export const metadata: Metadata = {
   title: "Kairos — A casa digital da sua igreja",
@@ -53,29 +49,5 @@ export default function KairosLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      {children}
-      {gaMeasurementId ? (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-            strategy="afterInteractive"
-          />
-          <Script id="kairos-google-analytics" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              window.gtag = gtag;
-              gtag('js', new Date());
-              gtag('config', '${gaMeasurementId}', {
-                page_path: window.location.pathname,
-                anonymize_ip: true
-              });
-            `}
-          </Script>
-        </>
-      ) : null}
-    </>
-  );
+  return children;
 }
