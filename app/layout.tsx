@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
+
+const gaMeasurementId =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-RTPXYX29JL";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://flow-labs.digital"),
@@ -59,7 +63,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={GeistSans.className} suppressHydrationWarning>{children}</body>
+      <body className={GeistSans.className} suppressHydrationWarning>
+        {children}
+        {gaMeasurementId ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="flow-labs-google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                gtag('js', new Date());
+                gtag('config', '${gaMeasurementId}', {
+                  page_path: window.location.pathname,
+                  anonymize_ip: true
+                });
+              `}
+            </Script>
+          </>
+        ) : null}
+      </body>
     </html>
   );
 }
