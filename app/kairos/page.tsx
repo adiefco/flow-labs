@@ -1,6 +1,9 @@
+import Link from "next/link";
+import TrackedLink from "./tracked-link";
+
 const whatsappUrl =
   process.env.NEXT_PUBLIC_WHATSAPP_URL ||
-  "https://wa.me/5521982233201?text=Ol%C3%A1!%20Tenho%20interesse%20em%20conhecer%20o%20Kairos.";
+  "https://wa.me/5521982233201?text=Ol%C3%A1!%20Conheci%20o%20Kairos%20pela%20landing%20da%20Flow%20Labs%20e%20gostaria%20de%20entender%20como%20ele%20pode%20funcionar%20para%20a%20minha%20igreja.";
 
 export default function KairosPage() {
   return (
@@ -668,17 +671,17 @@ export default function KairosPage() {
       {/* ── Nav ── */}
       <header style={{ background: "#f7f4ee", position: "sticky", top: 0, zIndex: 50, borderBottom: "1px solid rgba(37,37,58,0.08)" }}>
         <div className="k-shell k-nav">
-          <a href="/" className="k-nav-brand">
+          <Link href="/" className="k-nav-brand">
             <span className="k-mark" aria-hidden="true" />
             <span>kairos</span>
-          </a>
+          </Link>
           <nav className="k-navlinks">
             <a href="#funciona"><span className="k-navlink-text">Como funciona</span></a>
             <a href="#recursos"><span className="k-navlink-text">Recursos</span></a>
             <a href="#kw-final"><span className="k-navlink-text">Para sua igreja</span></a>
-            <a href="#kw-final" className="k-btn" style={{ fontSize: 13, minHeight: 38, padding: "0 18px", color: "#fff"}}>
+            <TrackedLink href="#kw-final" location="header" className="k-btn" style={{ fontSize: 13, minHeight: 38, padding: "0 18px", color: "#fff"}}>
               Quero conhecer
-            </a>
+            </TrackedLink>
           </nav>
         </div>
       </header>
@@ -696,8 +699,8 @@ export default function KairosPage() {
               Agenda, cultos, pedidos de oração, contribuições e informações importantes reunidos em uma experiência simples, acolhedora e com a identidade da sua igreja.
             </p>
             <div className="k-actions">
-              <a href="#kw-final" className="k-btn">Quero conhecer o Kairos</a>
-              <a href="#funciona" className="k-btn k-btn-ghost">Ver como funciona</a>
+              <TrackedLink href="#kw-final" location="hero_primary" className="k-btn">Quero conhecer o Kairos</TrackedLink>
+              <TrackedLink href="#funciona" location="hero_secondary" className="k-btn k-btn-ghost">Ver como funciona</TrackedLink>
             </div>
           </div>
 
@@ -968,7 +971,7 @@ export default function KairosPage() {
             Queremos construir essa etapa ao lado de comunidades que acreditam em uma comunicação mais próxima, organizada e humana. Mais do que receber uma plataforma — participar da evolução do produto.
           </p>
           <div style={{ marginTop: 28 }}>
-            <a href="#kw-final" className="k-btn">Quero conhecer o Kairos</a>
+            <TrackedLink href="#kw-final" location="early_access" className="k-btn">Quero conhecer o Kairos</TrackedLink>
           </div>
         </div>
       </section>
@@ -1008,14 +1011,16 @@ export default function KairosPage() {
             Conte um pouco sobre sua comunidade e descubra como o Kairos pode aproximar pessoas, organizar informações e fortalecer conexões.
           </p>
           <div className="k-actions" style={{ justifyContent: "center", marginTop: 32 }}>
-            <a
+            <TrackedLink
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
               className="k-btn"
+              eventName="whatsapp_click"
+              location="final_cta"
             >
               Falar sobre minha igreja
-            </a>
+            </TrackedLink>
           </div>
           <p style={{ marginTop: 16, fontSize: 13, color: "#9b98a8" }}>
             Sem compromisso. Vamos começar com uma conversa.
@@ -1033,9 +1038,9 @@ export default function KairosPage() {
           <span>A casa digital da sua igreja.</span>
           <span>
             Um produto{" "}
-            <a href="/" style={{ color: "#25253a", textDecoration: "none", fontWeight: 500 }}>
+            <Link href="/" style={{ color: "#25253a", textDecoration: "none", fontWeight: 500 }}>
               Flow Labs
-            </a>{" "}
+            </Link>{" "}
             · 2026
           </span>
         </div>
